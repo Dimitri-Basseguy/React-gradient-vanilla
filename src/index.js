@@ -1,9 +1,7 @@
 // == Imports
 import store from 'src/store';
 
-import { randomHexColor, generateSpanColor } from './utils';
-
-// console.log(store.getState());
+import { randomHexColor, generateSpanColor } from './utils'
 
 // == Rendu dans le DOM
 function renderNbColors() {
@@ -44,7 +42,7 @@ renderColors();
 document.getElementById('randAll')
   .addEventListener('click', () => {
     // debug
-    console.log('Random all colors');
+    // console.log('Random all colors');
     // data
     state.nbColors += 2;
     state.firstColor = randomHexColor();
@@ -75,14 +73,15 @@ document.getElementById('randLast')
 
 document.getElementById('toLeft')
   .addEventListener('click', () => {
-    state.direction = '270deg';
+    // il faut envoyer l'action au store
+    store.dispatch({ type: 'DIRECTION_TO_LEFT' });
     renderGradient();
     renderColors();
   });
 
 document.getElementById('toRight')
   .addEventListener('click', () => {
-    state.direction = '90deg';
+    store.dispatch({ type: 'DIRECTION_TO_RIGHT' });
     renderGradient();
     renderColors();
   });
