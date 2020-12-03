@@ -33,6 +33,21 @@ function reducer(state = initialState, action = {}) {
 
     case 'DIRECTION_TO_RIGHT':
       return { ...state, direction: '90deg', nbChanges: state.nbChanges + 1 };
+
+    case 'RANDOM_FIRST_COLOR':
+      return {
+        ...state,
+        firstColor: action.color,
+        nbColors: state.nbColors + 1,
+      };
+
+    case 'RANDOM_LAST_COLOR':
+      return {
+        ...state,
+        lastColor: action.color,
+        nbColors: state.nbColors + 1,
+      };
+
     default: return state;
   }
 }
