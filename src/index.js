@@ -1,7 +1,7 @@
 // == Imports
 import store from 'src/store';
 
-import { randomHexColor, generateSpanColor } from './utils'
+import { randomHexColor, generateSpanColor } from './utils';
 
 // == Rendu dans le DOM
 function renderNbColors() {
@@ -38,6 +38,12 @@ renderNbColors();
 renderGradient();
 renderColors();
 
+// Abonement aux changements : chaque fois que quelque chose change dans le state du store,
+// on appelle la callback => mise à jour de l'interface
+store.subscribe(renderNbColors);
+store.subscribe(renderGradient);
+store.subscribe(renderColors);
+
 // == Controls
 document.getElementById('randAll')
   .addEventListener('click', () => {
@@ -53,9 +59,10 @@ document.getElementById('randAll')
       color: randomHexColor(),
     });
     // ui
-    renderNbColors();
-    renderGradient();
-    renderColors();
+    // useless depuis l'abonement au changement ligne 42
+    // renderNbColors();
+    // renderGradient();
+    // renderColors();
   });
 
 document.getElementById('randFirst')
@@ -64,9 +71,6 @@ document.getElementById('randFirst')
       type: 'RANDOM_FIRST_COLOR',
       color: randomHexColor(),
     });
-    renderNbColors();
-    renderGradient();
-    renderColors();
   });
 
 document.getElementById('randLast')
@@ -75,22 +79,15 @@ document.getElementById('randLast')
       type: 'RANDOM_LAST_COLOR',
       color: randomHexColor(),
     });
-    renderNbColors();
-    renderGradient();
-    renderColors();
   });
 
 document.getElementById('toLeft')
   .addEventListener('click', () => {
     // il faut envoyer l'action au store
     store.dispatch({ type: 'DIRECTION_TO_LEFT' });
-    renderGradient();
-    renderColors();
   });
 
 document.getElementById('toRight')
   .addEventListener('click', () => {
     store.dispatch({ type: 'DIRECTION_TO_RIGHT' });
-    renderGradient();
-    renderColors();
   });
