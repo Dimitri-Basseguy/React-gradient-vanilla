@@ -1,7 +1,17 @@
 // == Imports
 import store from 'src/store';
+import {
+  RANDOM_FIRST_COLOR,
+  RANDOM_LAST_COLOR,
+  DIRECTION_TO_LEFT,
+  DIRECTION_TO_RIGHT,
+  randomFirstColor,
+  randomLastColor,
+} from 'src/actions/gradient';
 
-import { randomHexColor, generateSpanColor } from './utils';
+import {
+  generateSpanColor,
+} from './utils';
 
 // == Rendu dans le DOM
 function renderNbColors() {
@@ -47,17 +57,8 @@ store.subscribe(renderColors);
 // == Controls
 document.getElementById('randAll')
   .addEventListener('click', () => {
-    // debug
-    // data
-    store.dispatch({
-      type: 'RANDOM_FIRST_COLOR',
-      color: randomHexColor(),
-    });
-
-    store.dispatch({
-      type: 'RANDOM_LAST_COLOR',
-      color: randomHexColor(),
-    });
+    store.dispatch(randomFirstColor());
+    store.dispatch(randomLastColor());
     // ui
     // useless depuis l'abonement au changement ligne 42
     // renderNbColors();
@@ -67,27 +68,21 @@ document.getElementById('randAll')
 
 document.getElementById('randFirst')
   .addEventListener('click', () => {
-    store.dispatch({
-      type: 'RANDOM_FIRST_COLOR',
-      color: randomHexColor(),
-    });
+    store.dispatch(randomFirstColor());
   });
 
 document.getElementById('randLast')
   .addEventListener('click', () => {
-    store.dispatch({
-      type: 'RANDOM_LAST_COLOR',
-      color: randomHexColor(),
-    });
+    store.dispatch(randomLastColor());
   });
 
 document.getElementById('toLeft')
   .addEventListener('click', () => {
     // il faut envoyer l'action au store
-    store.dispatch({ type: 'DIRECTION_TO_LEFT' });
+    store.dispatch({ type: DIRECTION_TO_LEFT });
   });
 
 document.getElementById('toRight')
   .addEventListener('click', () => {
-    store.dispatch({ type: 'DIRECTION_TO_RIGHT' });
+    store.dispatch({ type: DIRECTION_TO_RIGHT });
   });
