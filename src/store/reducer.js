@@ -3,6 +3,10 @@ import {
   RANDOM_LAST_COLOR,
   DIRECTION_TO_LEFT,
   DIRECTION_TO_RIGHT,
+  DIRECTION_TO_45,
+  DIRECTION_TO_135,
+  DIRECTION_TO_225,
+  DIRECTION_TO_315,
 } from 'src/actions/gradient';
 
 const initialState = {
@@ -40,6 +44,18 @@ function reducer(state = initialState, action = {}) {
 
     case DIRECTION_TO_RIGHT:
       return { ...state, direction: '90deg', nbChanges: state.nbChanges + 1 };
+
+    case DIRECTION_TO_45:
+      return { ...state, direction: '45deg', nbChanges: state.nbChanges + 1 };
+
+    case DIRECTION_TO_135:
+      return { ...state, direction: '135deg', nbChanges: state.nbChanges + 1 };
+
+    case DIRECTION_TO_225:
+      return { ...state, direction: '225deg', nbChanges: state.nbChanges + 1 };
+
+    case DIRECTION_TO_315:
+      return { ...state, direction: '315deg', nbChanges: state.nbChanges + 1 };
 
     case RANDOM_FIRST_COLOR:
       return {

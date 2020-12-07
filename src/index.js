@@ -5,6 +5,10 @@ import {
   randomLastColor,
   directionToLeft,
   directionToRight,
+  directionTo45,
+  directionTo135,
+  directionTo225,
+  directionTo315,
 } from 'src/actions/gradient';
 
 import {
@@ -83,4 +87,24 @@ document.getElementById('toLeft')
 document.getElementById('toRight')
   .addEventListener('click', () => {
     store.dispatch(directionToRight());
+  });
+
+document.getElementById('45')
+  .addEventListener('click', () => {
+    store.dispatch(directionTo45());
+  });
+
+document.getElementById('135')
+  .addEventListener('click', () => {
+    store.dispatch(directionTo135());
+  });
+
+document.getElementById('225')
+  .addEventListener('click', () => {
+    store.dispatch(directionTo225());
+  });
+
+document.getElementById('315')
+  .addEventListener('click', () => {
+    store.dispatch(directionTo315());
   });
