@@ -1,12 +1,10 @@
 // == Imports
 import store from 'src/store';
 import {
-  RANDOM_FIRST_COLOR,
-  RANDOM_LAST_COLOR,
-  DIRECTION_TO_LEFT,
-  DIRECTION_TO_RIGHT,
   randomFirstColor,
   randomLastColor,
+  directionToLeft,
+  directionToRight,
 } from 'src/actions/gradient';
 
 import {
@@ -79,10 +77,10 @@ document.getElementById('randLast')
 document.getElementById('toLeft')
   .addEventListener('click', () => {
     // il faut envoyer l'action au store
-    store.dispatch({ type: DIRECTION_TO_LEFT });
+    store.dispatch(directionToLeft());
   });
 
 document.getElementById('toRight')
   .addEventListener('click', () => {
-    store.dispatch({ type: DIRECTION_TO_RIGHT });
+    store.dispatch(directionToRight());
   });

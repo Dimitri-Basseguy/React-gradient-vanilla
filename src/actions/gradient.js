@@ -1,4 +1,4 @@
-import { randomHexColor, generateSpanColor } from '../utils';
+import { randomHexColor } from '../utils';
 
 // action types
 export const DIRECTION_TO_LEFT = 'DIRECTION_TO_LEFT';
@@ -16,4 +16,12 @@ export const randomFirstColor = () => ({
 export const randomLastColor = () => ({
   type: RANDOM_LAST_COLOR,
   color: randomHexColor(),
+});
+
+export const directionToLeft = () => ({
+  type: DIRECTION_TO_LEFT,
+});
+
+export const directionToRight = () => ({
+  type: DIRECTION_TO_RIGHT,
 });
