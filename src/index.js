@@ -3,12 +3,7 @@ import store from 'src/store';
 import {
   randomFirstColor,
   randomLastColor,
-  directionToLeft,
-  directionToRight,
-  directionTo45,
-  directionTo135,
-  directionTo225,
-  directionTo315,
+  changeDirection,
 } from 'src/actions/gradient';
 
 import {
@@ -81,30 +76,30 @@ document.getElementById('randLast')
 document.getElementById('toLeft')
   .addEventListener('click', () => {
     // il faut envoyer l'action au store
-    store.dispatch(directionToLeft());
+    store.dispatch(changeDirection('270deg'));
   });
 
 document.getElementById('toRight')
   .addEventListener('click', () => {
-    store.dispatch(directionToRight());
+    store.dispatch(changeDirection('90deg'));
   });
 
 document.getElementById('45')
   .addEventListener('click', () => {
-    store.dispatch(directionTo45());
+    store.dispatch(changeDirection('45deg'));
   });
 
 document.getElementById('135')
   .addEventListener('click', () => {
-    store.dispatch(directionTo135());
+    store.dispatch(changeDirection('135deg'));
   });
 
 document.getElementById('225')
   .addEventListener('click', () => {
-    store.dispatch(directionTo225());
+    store.dispatch(changeDirection('225deg'));
   });
 
 document.getElementById('315')
   .addEventListener('click', () => {
-    store.dispatch(directionTo315());
+    store.dispatch(changeDirection('315deg'));
   });
