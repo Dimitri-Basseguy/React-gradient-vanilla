@@ -1,8 +1,7 @@
 import {
   RANDOM_FIRST_COLOR,
   RANDOM_LAST_COLOR,
-  DIRECTION_TO_LEFT,
-  DIRECTION_TO_RIGHT,
+  CHANGE_DIRECTION,
 } from 'src/actions/gradient';
 
 const initialState = {
@@ -23,23 +22,16 @@ const initialState = {
 function reducer(state = initialState, action = {}) {
   switch (action.type) {
     // je traduis DIRECTION_TO_LEFT
-    case DIRECTION_TO_LEFT:
+    case CHANGE_DIRECTION:
       // je retourne le nouvel état qui utilise cette action
-      return {
-        // on deverse le state en premier (l'ordre est important)
-        ...state,
-        direction: '270deg',
-        nbChanges: state.nbChanges + 1,
-        // on change direction
-        // firstColor: '#e367a4',
-        // lastColor: '#48b1f3',
-        // direction: '90deg',
-        // nbColors: 0,
-        // direction: '270deg', Ici on ajoute une direction (la dernière est prise en compte)
-      };
-
-    case DIRECTION_TO_RIGHT:
-      return { ...state, direction: '90deg', nbChanges: state.nbChanges + 1 };
+      // on deverse le state en premier (l'ordre est important)
+      // on change direction
+      // firstColor: '#e367a4',
+      // lastColor: '#48b1f3',
+      // direction: '90deg',
+      // nbColors: 0,
+      // direction: action.direction, ici on ajoute une direction (la dernière est prise en compte)
+      return { ...state, direction: action.direction, nbChanges: state.nbChanges + 1 };
 
     case RANDOM_FIRST_COLOR:
       return {

@@ -3,8 +3,7 @@ import store from 'src/store';
 import {
   randomFirstColor,
   randomLastColor,
-  directionToLeft,
-  directionToRight,
+  changeDirection,
 } from 'src/actions/gradient';
 
 import {
@@ -41,16 +40,25 @@ function renderColors() {
   document.getElementById('colors').innerHTML = result;
 }
 
+function getStyle() {
+  const element = document.getElementById('gradient');
+  const codeCss = element.style.background;
+  const givenCode = document.getElementById('cssStyle');
+  return givenCode.innerText = `background: ${codeCss};`;
+}
+
 // == Initialisation
 renderNbColors();
 renderGradient();
 renderColors();
+getStyle();
 
 // Abonement aux changements : chaque fois que quelque chose change dans le state du store,
 // on appelle la callback => mise à jour de l'interface
 store.subscribe(renderNbColors);
 store.subscribe(renderGradient);
 store.subscribe(renderColors);
+store.subscribe(getStyle);
 
 // == Controls
 document.getElementById('randAll')
@@ -77,10 +85,30 @@ document.getElementById('randLast')
 document.getElementById('toLeft')
   .addEventListener('click', () => {
     // il faut envoyer l'action au store
-    store.dispatch(directionToLeft());
+    store.dispatch(changeDirection('270deg'));
   });
 
 document.getElementById('toRight')
   .addEventListener('click', () => {
-    store.dispatch(directionToRight());
+    store.dispatch(changeDirection('90deg'));
+  });
+
+document.getElementById('45')
+  .addEventListener('click', () => {
+    store.dispatch(changeDirection('45deg'));
+  });
+
+document.getElementById('135')
+  .addEventListener('click', () => {
+    store.dispatch(changeDirection('135deg'));
+  });
+
+document.getElementById('225')
+  .addEventListener('click', () => {
+    store.dispatch(changeDirection('225deg'));
+  });
+
+document.getElementById('315')
+  .addEventListener('click', () => {
+    store.dispatch(changeDirection('315deg'));
   });
