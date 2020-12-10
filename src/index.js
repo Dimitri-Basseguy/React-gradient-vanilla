@@ -40,16 +40,25 @@ function renderColors() {
   document.getElementById('colors').innerHTML = result;
 }
 
+function getStyle() {
+  const element = document.getElementById('gradient');
+  const codeCss = element.style.background;
+  const givenCode = document.getElementById('cssStyle');
+  return givenCode.innerText = `background: ${codeCss};`;
+}
+
 // == Initialisation
 renderNbColors();
 renderGradient();
 renderColors();
+getStyle();
 
 // Abonement aux changements : chaque fois que quelque chose change dans le state du store,
 // on appelle la callback => mise à jour de l'interface
 store.subscribe(renderNbColors);
 store.subscribe(renderGradient);
 store.subscribe(renderColors);
+store.subscribe(getStyle);
 
 // == Controls
 document.getElementById('randAll')
