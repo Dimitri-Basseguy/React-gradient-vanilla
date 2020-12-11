@@ -1,4 +1,5 @@
 @import 'reset';
+@import '../.././styles/_vars.scss';
 
 /* Specific */
 body {
@@ -25,9 +26,9 @@ body {
   position: fixed;
   left: 50%;
   top: 0;
-  color: #fff;
+  color: $bg-color;
   transform: translateX(-50%);
-  background-color: #3273dc;
+  background-color: $lightblue;
   /* background-color: #0ba */
   padding: .3rem .6rem;
   font-size: .8rem;
