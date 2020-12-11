@@ -1,3 +1,5 @@
+@import '../.././styles/_vars.scss';
+
 .button {
   border: 1px solid transparent;
   font-family: inherit;
@@ -22,12 +24,20 @@
   color: #363636;
 }
 .button:focus {
-  border-color: #3273dc;
   color: #363636;
+  background-color: $lightblue;
+  border: 1px solid $lightblue;
+  -webkit-box-shadow: 0px 0px 10px 0px $lightblue;
+  -moz-box-shadow: 0px 0px 10px 0px$lightblue;
+  box-shadow: 0px 0px 10px 0px $lightblue;
 }
 .button:active {
-  border-color: #4a4a4a;
   color: #363636;
+  background-color: $lightblue;
+  border: 1px solid $lightblue;
+  -webkit-box-shadow: 0px 0px 10px 0px $lightblue;
+  -moz-box-shadow: 0px 0px 10px 0px$lightblue;
+  box-shadow: 0px 0px 10px 0px $lightblue;
 }
 .buttons {
   align-items: center;

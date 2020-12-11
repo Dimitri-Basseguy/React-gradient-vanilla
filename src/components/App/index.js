@@ -8,7 +8,6 @@ import Gradient from 'src/components/Gradient';
 import Directions from 'src/components/Directions';
 import Code from 'src/components/Code';
 
-import './styles.scss';
 import 'src/styles/index.scss';
 
 // == Composant
