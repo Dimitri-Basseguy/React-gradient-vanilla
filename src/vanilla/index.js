@@ -42,10 +42,8 @@ function renderColors() {
 
 function getStyle() {
   const element = document.getElementById('gradient').style.background;
-  console.log(element);
-  const givenCode = document.getElementById('cssStyle');
-  const codeCopy = givenCode.innerText = `background: ${element};`;
-  return codeCopy;
+  const givenCode = document.getElementById('cssStyle').innerText(`background: ${element};`);
+  return givenCode;
 }
 
 // == Initialisation
