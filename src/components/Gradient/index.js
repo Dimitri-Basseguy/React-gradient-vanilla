@@ -1,6 +1,5 @@
 // == Import npm
 import React from 'react';
-import PropTypes from 'prop-types';
 // == Import
 
 /*
@@ -32,13 +31,13 @@ function renderColors() {
 const Gradient = () => {
   const firstColor = 'blue';
   const lastColor = 'pink';
-  const direction = '90deg';
+  const direction = '315deg';
   const gradient = `linear-gradient(${direction},${firstColor},${lastColor})`;
   return (
     <>
       <div id="colors">
         <span style={{ color: firstColor }}>{firstColor}</span>
-        <span style={{ rotate: direction }}>→</span>
+        <span style={{ transform: `rotate( calc(${direction} - 90deg)` }}>→</span>
         <span style={{ color: lastColor }}>{lastColor}</span>
       </div>
       <div id="gradient" style={{ background: gradient }} />
