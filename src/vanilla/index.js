@@ -8,7 +8,7 @@ import {
 
 import {
   generateSpanColor,
-} from './utils';
+} from '../utils';
 
 // == Rendu dans le DOM
 function renderNbColors() {
@@ -41,10 +41,10 @@ function renderColors() {
 }
 
 function getStyle() {
-  const element = document.getElementById('gradient');
-  const codeCss = element.style.background;
+  const element = document.getElementById('gradient').style.background;
   const givenCode = document.getElementById('cssStyle');
-  return givenCode.innerText = `background: ${codeCss};`;
+  const codeCopy = givenCode.innerText = `background: ${element};`;
+  return codeCopy;
 }
 
 // == Initialisation

@@ -2,14 +2,23 @@
 import React from 'react';
 
 // == Import
-import reactLogo from './react-logo.svg';
-import './styles.css';
+import NbColors from 'src/components/NbColors';
+import Controls from 'src/components/Controls';
+import Gradient from 'src/components/Gradient';
+import Directions from 'src/components/Directions';
+import Code from 'src/components/Code';
+import './styles.scss';
+import 'src/styles/index.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
+    <h1>Simple gradient generator</h1>
+    <NbColors nbColors={4} />
+    <Controls />
+    <Gradient />
+    <Directions />
+    <Code />
   </div>
 );
 
