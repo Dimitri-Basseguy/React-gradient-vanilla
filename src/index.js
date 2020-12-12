@@ -6,9 +6,13 @@ import { Provider } from 'react-redux';
 
 import App from 'src/components/App';
 
+import store from 'src/store';
+
 render(
   // JSX à rendre
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   // emplacement du rendu dans le DOM
   document.getElementById('root'),
 );

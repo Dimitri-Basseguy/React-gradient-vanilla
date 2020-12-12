@@ -31,7 +31,11 @@ function reducer(state = initialState, action = {}) {
       // direction: '90deg',
       // nbColors: 0,
       // direction: action.direction, ici on ajoute une direction (la dernière est prise en compte)
-      return { ...state, direction: action.direction, nbChanges: state.nbChanges + 1 };
+      return {
+        ...state,
+        direction: action.direction,
+        nbChanges: state.nbChanges + 1,
+      };
 
     case RANDOM_FIRST_COLOR:
       return {

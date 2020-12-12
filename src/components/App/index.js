@@ -14,7 +14,7 @@ import 'src/styles/index.scss';
 const App = () => (
   <div className="app">
     <h1>Simple gradient generator</h1>
-    <NbColors nbColors={4} />
+    <NbColors />
     <Controls />
     <Gradient />
     <Directions />

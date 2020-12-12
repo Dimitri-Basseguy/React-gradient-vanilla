@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-// == Import
+import { useSelector } from 'react-redux';
 
 /*
 function renderGradient() {
@@ -29,9 +29,9 @@ function renderColors() {
 
 // == Composant
 const Gradient = () => {
-  const firstColor = 'blue';
-  const lastColor = 'pink';
-  const direction = '315deg';
+  const firstColor = useSelector((state) => state.firstColor);
+  const lastColor = useSelector((state) => state.lastColor);
+  const direction = useSelector((state) => state.direction);
   const gradient = `linear-gradient(${direction},${firstColor},${lastColor})`;
   return (
     <>

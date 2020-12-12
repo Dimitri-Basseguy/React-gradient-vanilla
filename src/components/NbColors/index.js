@@ -1,19 +1,16 @@
 // == Import npm
 import React from 'react';
-import PropTypes from 'prop-types';
-
-// == Import
+import { useSelector } from 'react-redux';
 
 // == Composant
-const NbColors = ({ nbColors }) => (
-  <div id="nbColors">
-    {nbColors} couleur(s) générée(s)
-  </div>
-);
-
-// PropType
-NbColors.propTypes = {
-  nbColors: PropTypes.number.isRequired,
+const NbColors = () => {
+  // utilisatio, du hook useSelector de react-redux pour sélectionner une infos dans le state
+  const nbColors = useSelector((state) => state.nbColors);
+  return (
+    <div id="nbColors">
+      {nbColors} couleur(s) générée(s)
+    </div>
+  );
 };
 
 // == Export

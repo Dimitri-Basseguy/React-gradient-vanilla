@@ -1,6 +1,10 @@
 // == Import npm
 import React from 'react';
-
+import { useDispatch } from 'react-redux';
+import {
+  randomFirstColor,
+  randomLastColor,
+} from 'src/actions/gradient';
 // == Import
 
 // == Composant
