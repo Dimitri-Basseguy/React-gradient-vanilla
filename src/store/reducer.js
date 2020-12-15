@@ -10,6 +10,7 @@ const initialState = {
   direction: '90deg',
   nbColors: 0,
   nbChanges: 0,
+  code: '',
 };
 
 // reducer : "entonnoir" qui retourne un nouvel état à partir de l'état actuel

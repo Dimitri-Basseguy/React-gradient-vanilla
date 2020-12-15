@@ -1,8 +1,6 @@
 // == Import npm
 import React from 'react';
 
-// == Import
-
 // == Composant
 const Code = () => (
   <div>

@@ -33,6 +33,9 @@ const Gradient = () => {
   const lastColor = useSelector((state) => state.lastColor);
   const direction = useSelector((state) => state.direction);
   const gradient = `linear-gradient(${direction},${firstColor},${lastColor})`;
+  // const element = document.getElementById('gradient').style.background;
+  // const givenCode = document.getElementById('cssStyle').innerText(`background: ${element};`);
+  // console.log(element);
   return (
     <>
       <div id="colors">
