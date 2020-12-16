@@ -13,15 +13,17 @@ const Directions = ({ direction, label }) => {
 
   return (
     <button
-      className="button"
+      className="btn"
       type="button"
       id="toLeft"
       onClick={() => {
         dispatch(changeDirection(direction));
       }}
     >
-      {label}
-    </button>
+      <span className="btn__content">{label}</span>
+      <span className="btn__glitch" />
+      <span className="btn__label">r69</span>
+    </button >
   );
 };
 

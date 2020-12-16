@@ -14,38 +14,51 @@ const Controls = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="buttons group">
-      <button
-        className="button"
-        id="randFirst"
-        type="button"
-        onClick={() => {
-          dispatch(randomFirstColor());
-        }}
-      >
-        Random First
-      </button>
-      <button
-        className="button"
-        id="randAll"
-        type="button"
-        onClick={() => {
-          dispatch(randomFirstColor());
-          dispatch(randomLastColor());
-        }}
-      >
-        Random All
-      </button>
-      <button
-        className="button"
-        id="randLast"
-        type="button"
-        onClick={() => {
-          dispatch(randomLastColor());
-        }}
-      >
-        Random Last
-      </button>
+    <div className="parentControl">
+      <div className="div1">
+        <button
+          className="btn"
+          id="randFirst"
+          type="button"
+          onClick={() => {
+            dispatch(randomFirstColor());
+          }}
+        >
+          <span className="btn__content">Random First</span>
+          <span className="btn__glitch" />
+          <span className="btn__label">r69</span>
+        </button>
+      </div>
+      <div className="div2">
+        <button
+          className="btn"
+          id="randAll"
+          type="button"
+          onClick={() => {
+            dispatch(randomFirstColor());
+            dispatch(randomLastColor());
+          }}
+        >
+          <span className="btn__content">Random All</span>
+          <span className="btn__glitch" />
+          <span className="btn__label">r69</span>
+
+        </button>
+      </div>
+      <div className="div3">
+        <button
+          className="btn"
+          id="randLast"
+          type="button"
+          onClick={() => {
+            dispatch(randomLastColor());
+          }}
+        >
+          <span className="btn__content">Random Last</span>
+          <span className="btn__glitch" />
+          <span className="btn__label">r69</span>
+        </button>
+      </div>
     </div>
   );
 };

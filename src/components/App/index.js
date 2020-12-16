@@ -13,7 +13,7 @@ import 'src/styles/index.scss';
 
 // == Composant
 const App = () => {
-  const test = '';
+  // const test = '';
   return (
     <div className="app">
       <h1>Simple gradient generator</h1>
