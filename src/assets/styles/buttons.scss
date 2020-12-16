@@ -1,4 +1,20 @@
 @import '../.././styles/_vars.scss';
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+.div4 { grid-area: 2 / 1 / 3 / 2; }
+.div5 { grid-area: 2 / 2 / 3 / 3; }
+.div6 { grid-area: 2 / 3 / 3 / 4; }
+.div7 { grid-area: 3 / 1 / 4 / 2; }
+.div8 { grid-area: 3 / 2 / 4 / 3; }
+.div9 { grid-area: 3 / 3 / 4 / 4; }
 
 .button {
   border: 1px solid transparent;
@@ -19,10 +35,12 @@
   line-height: 1.5;
   vertical-align: top;
 }
+
 .button:hover {
   border-color: #b5b5b5;
   color: #363636;
 }
+
 .button:focus {
   color: #363636;
   background-color: $lightblue;
@@ -31,6 +49,7 @@
   -moz-box-shadow: 0px 0px 10px 0px$lightblue;
   box-shadow: 0px 0px 10px 0px $lightblue;
 }
+
 .button:active {
   color: #363636;
   background-color: $lightblue;
@@ -39,6 +58,7 @@
   -moz-box-shadow: 0px 0px 10px 0px$lightblue;
   box-shadow: 0px 0px 10px 0px $lightblue;
 }
+
 .buttons {
   align-items: center;
   display: flex;

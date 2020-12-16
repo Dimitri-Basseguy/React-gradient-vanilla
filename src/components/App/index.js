@@ -2,7 +2,8 @@
 import React from 'react';
 
 // == Import
-import NbColors from 'src/components/NbColors';
+// On remplace par le composant container, qui est la version enrichie
+import NbColors from 'src/containers/NbColors';
 import Controls from 'src/components/Controls';
 import Gradient from 'src/components/Gradient';
 import Directions from 'src/components/Directions';
