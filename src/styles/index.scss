@@ -6,8 +6,22 @@
 body {
   height: 100vh;
   font-family: Tomorrow, sans-serif;
-  background-color: $bg-color;
   color: white;
+  background-color: $bg-color;
+}
+
+body::after {
+  content: "";
+  background-image: url("https://img5.goodfon.com/original/1920x1080/d/96/skiegraphic-studio-by-skiegraphic-studio-cyberpunk-cyber-r-1.jpg");
+  background-size: cover;
+  filter: blur(2px);
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 h1 {

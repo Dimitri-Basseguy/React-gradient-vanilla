@@ -61,11 +61,11 @@ body {
 }
 #gradient {
   height: 300px;
-  border-radius: 1rem;
   margin-bottom: 1rem;
   color: rgba(255,255,255,.5);
   font-size: 8rem;
   line-height: 2;
+  clip-path: polygon(3% 0, 97% 0, 100% 5%, 100% 95%, 97% 100%, 3% 100%, 0 95%, 0 5%);
 }
 
 
