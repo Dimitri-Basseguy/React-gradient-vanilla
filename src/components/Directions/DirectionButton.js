@@ -1,6 +1,6 @@
 // == Import npm
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import {
   changeDirection,
@@ -23,7 +23,7 @@ const Directions = ({ direction, label }) => {
       <span className="btn__content">{label}</span>
       <span className="btn__glitch" />
       <span className="btn__label">r69</span>
-    </button >
+    </button>
   );
 };
 

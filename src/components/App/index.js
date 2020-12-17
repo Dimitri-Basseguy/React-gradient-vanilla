@@ -5,7 +5,7 @@ import React from 'react';
 // On remplace par le composant container, qui est la version enrichie
 import NbColors from 'src/containers/NbColors';
 import Controls from 'src/containers/Controls';
-import Gradient from 'src/components/Gradient';
+import Gradient from 'src/containers/Gradient';
 import Directions from 'src/components/Directions';
 import Code from 'src/components/Code';
 

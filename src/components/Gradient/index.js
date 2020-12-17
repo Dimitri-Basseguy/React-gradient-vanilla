@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
 // == Import npm
 import React from 'react';
-import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 /*
 function renderGradient() {
@@ -28,11 +29,9 @@ function renderColors() {
 // exemple : textAlign: 'center'
 
 // == Composant
-const Gradient = () => {
-  const firstColor = useSelector((state) => state.firstColor);
-  const lastColor = useSelector((state) => state.lastColor);
-  const direction = useSelector((state) => state.direction);
+const Gradient = ({ firstColor, lastColor, direction }) => {
   const gradient = `linear-gradient(${direction},${firstColor},${lastColor})`;
+  console.log(gradient);
   // const element = document.getElementById('gradient').style.background;
   // const givenCode = document.getElementById('cssStyle').innerText(`background: ${element};`);
   // console.log(element);
@@ -46,6 +45,12 @@ const Gradient = () => {
       <div id="gradient" style={{ background: gradient }} />
     </>
   );
+};
+
+Gradient.propTypes = {
+  direction: PropTypes.string.isRequired,
+  firstColor: PropTypes.string.isRequired,
+  lastColor: PropTypes.string.isRequired,
 };
 
 // == Export
