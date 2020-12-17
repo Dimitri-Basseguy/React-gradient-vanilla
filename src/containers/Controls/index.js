@@ -6,7 +6,7 @@ import { randomFirstColor, randomLastColor } from 'src/actions/gradient';
 import Controls from 'src/components/Controls';
 
 // récupére les infos utiles dans le state pour les founrnir en props du comp. de présentation
-const mapStateToProps = (state) => { };
+const mapStateToProps = () => { };
 // construit les fonctions pour remplir les props qui ont besoin d'envoyer
 // une action au store
 const mapDispatchToProps = (dispatch) => ({
