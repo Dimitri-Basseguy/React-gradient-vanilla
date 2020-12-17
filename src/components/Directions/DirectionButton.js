@@ -1,35 +1,26 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import {
-  changeDirection,
-} from 'src/actions/gradient';
-// == Import
 
 // == Composant
-const Directions = ({ direction, label }) => {
-  const dispatch = useDispatch();
-
-  return (
-    <button
-      className="btn"
-      type="button"
-      id="toLeft"
-      onClick={() => {
-        dispatch(changeDirection(direction));
-      }}
-    >
-      <span className="btn__content">{label}</span>
-      <span className="btn__glitch" />
-      <span className="btn__label">r69</span>
-    </button>
-  );
-};
+const Directions = ({ randomInt, label, updateDirection }) => (
+  <button
+    className="btn"
+    type="button"
+    id="toLeft"
+    onClick={updateDirection}
+  >
+    <span className="btn__content">{label}</span>
+    <span className="btn__glitch" />
+    <span className="btn__label">r{randomInt}</span>
+  </button>
+);
 
 Directions.propTypes = {
-  direction: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  // attend un argument qui correspond à la direction
+  updateDirection: PropTypes.func.isRequired,
+  randomInt: PropTypes.string.isRequired,
 };
 
 // == Export

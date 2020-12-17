@@ -1,20 +1,17 @@
 // == connect fait le lien entre le store et un composant
 import { connect } from 'react-redux';
+import DirectionButton from 'src/components/Directions/DirectionButton';
 import { changeDirection } from 'src/actions/gradient';
 // == composant de présentation
-import DirectionButton from 'src/components/Directions';
 
 // récupére les infos utiles dans le state pour les founrnir en props du comp. de présentation
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = () => { };
 
-  };
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  // nom de la props à remplir: fonction correspondante
-  directionChange: () => {
-    dispatch(changeDirection());
+// mapsDispatchToProps a un 2ème paramètre (facultatif) ownProps : représente
+// les props fournies au containers par son comp. parent
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  updateDirection: () => {
+    dispatch(changeDirection(ownProps.direction));
   },
 });
 
