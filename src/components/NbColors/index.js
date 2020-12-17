@@ -2,16 +2,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// == Import
-
 // == Composant
-const NbColors = ({ nbColors }) => (
-  <div id="nbColors">
-    {nbColors} couleur(s) générée(s)
-  </div>
-);
+const NbColors = ({ nbColors }) => {
 
-// PropType
+  return (
+    <div id="nbColors">
+      {nbColors} couleur(s) générée(s)
+    </div>
+  );
+};
+
 NbColors.propTypes = {
   nbColors: PropTypes.number.isRequired,
 };

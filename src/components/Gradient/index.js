@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
 // == Import npm
 import React from 'react';
-// == Import
+import PropTypes from 'prop-types';
 
 /*
 function renderGradient() {
@@ -28,11 +29,12 @@ function renderColors() {
 // exemple : textAlign: 'center'
 
 // == Composant
-const Gradient = () => {
-  const firstColor = 'blue';
-  const lastColor = 'pink';
-  const direction = '315deg';
+const Gradient = ({ firstColor, lastColor, direction }) => {
   const gradient = `linear-gradient(${direction},${firstColor},${lastColor})`;
+  console.log(gradient);
+  // const element = document.getElementById('gradient').style.background;
+  // const givenCode = document.getElementById('cssStyle').innerText(`background: ${element};`);
+  // console.log(element);
   return (
     <>
       <div id="colors">
@@ -43,6 +45,12 @@ const Gradient = () => {
       <div id="gradient" style={{ background: gradient }} />
     </>
   );
+};
+
+Gradient.propTypes = {
+  direction: PropTypes.string.isRequired,
+  firstColor: PropTypes.string.isRequired,
+  lastColor: PropTypes.string.isRequired,
 };
 
 // == Export

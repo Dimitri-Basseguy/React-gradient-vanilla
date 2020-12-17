@@ -36,7 +36,8 @@ body {
 }
 
 #root {
-  width: 450px;
+  width: 90%;
+  max-width: 600px;
   margin: 3em auto;
   text-align: center;
 }
@@ -50,10 +51,8 @@ body {
   font-family: monospace;
   display: flex;
   justify-content: space-around;
-  color: #666;
   padding: 1rem;
   font-size: 1.5rem;
-  text-shadow: 1px 1px 3px #999;
 }
 #direction {
   font-weight: bold;
@@ -62,11 +61,11 @@ body {
 }
 #gradient {
   height: 300px;
-  border-radius: 1rem;
   margin-bottom: 1rem;
   color: rgba(255,255,255,.5);
   font-size: 8rem;
   line-height: 2;
+  clip-path: polygon(3% 0, 97% 0, 100% 5%, 100% 95%, 97% 100%, 3% 100%, 0 95%, 0 5%);
 }
 
 

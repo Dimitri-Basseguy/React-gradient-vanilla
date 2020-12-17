@@ -1,35 +1,34 @@
 @import 'reset';
-@import 'vars';
+@import './vars';
 @import '../assets/styles/index';
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 
 body {
   height: 100vh;
-  font-family: 'JetBrains Mono', monospace;
-  background-color: #0e0e34;
-  background-image: linear-gradient(225deg, #0e0e34 0%, #220d66 100%);
+  font-family: Tomorrow, sans-serif;
   color: white;
+  background-color: $bg-color;
+}
+
+body::after {
+  content: "";
+  background-image: url("https://img5.goodfon.com/original/1920x1080/d/96/skiegraphic-studio-by-skiegraphic-studio-cyberpunk-cyber-r-1.jpg");
+  background-size: cover;
+  filter: blur(2px);
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 h1 {
-  font-family: 'VT323', monospace;
+  font-family: Tomorrow, sans-serif;
   margin: 1rem;
   font-size: 2em;
   color: $pink;
-}
-
-.button {
-  font-size: .9em;
-  border: 1px solid $lightblue;
-  background-color: transparent;
-  color: $lightblue;
-
-  &:hover {
-    background-color: $lightblue;
-    border: 1px solid $lightblue;
-    -webkit-box-shadow: 0px 0px 10px 0px $lightblue;
-    -moz-box-shadow: 0px 0px 10px 0px$lightblue;
-    box-shadow: 0px 0px 10px 0px $lightblue;
-  }
 }
 
 .copycode {
@@ -37,9 +36,17 @@ h1 {
 }
 
 .code {
-  background-color: teal;
+  width: auto;
+  height: 60px; 
+  border: 0;
+  outline: none;
+  background-color: $pink;
   color: antiquewhite;
-  border-radius: 5px;
+  cursor: text;
+  position: relative;
+  font-family: Tomorrow, sans-serif;
+  font-size: .85rem;
+  clip-path: polygon(97% 0, 100% 25%, 100% 100%, 3% 100%, 0% 75%, 0 0);
   padding: 1rem;
   font-size: .9em;
   text-align: left;

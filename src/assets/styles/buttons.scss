@@ -1,81 +1,223 @@
 @import '../.././styles/_vars.scss';
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 
-.button {
-  border: 1px solid transparent;
-  font-family: inherit;
-  font-weight: inherit;
-  border-radius: 4px;
-  box-shadow: none;
-  font-size: 1rem;
-  height: 2.5em;
-  position: relative;
-  background-color: #fff;
-  border-color: #dbdbdb;
-  color: #363636;
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.parentControl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+.div4 { grid-area: 2 / 1 / 3 / 2; }
+.div5 { grid-area: 2 / 2 / 3 / 3; }
+.div6 { grid-area: 2 / 3 / 3 / 4; }
+.div7 { grid-area: 3 / 1 / 4 / 2; }
+.div8 { grid-area: 3 / 2 / 4 / 3; }
+.div9 { grid-area: 3 / 3 / 4 / 4; }
+
+// Cyberpunk style !
+.btn {
+  width: 150px;
+  height: 60px; 
+  border: 0;
+  outline: none;
+  background-color: $lightblue;
   cursor: pointer;
-  padding: calc(.5em - 1px) 1em;
-  text-align: center;
-  white-space: nowrap;
-  line-height: 1.5;
-  vertical-align: top;
+  position: relative;
+  font-family: Tomorrow, sans-serif;
+  font-size: .85rem;
+  text-transform: uppercase;
+  color: $lightblue;
+  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
 }
-.button:hover {
-  border-color: #b5b5b5;
-  color: #363636;
-}
-.button:focus {
-  color: #363636;
-  background-color: $lightblue;
-  border: 1px solid $lightblue;
-  -webkit-box-shadow: 0px 0px 10px 0px $lightblue;
-  -moz-box-shadow: 0px 0px 10px 0px$lightblue;
-  box-shadow: 0px 0px 10px 0px $lightblue;
-}
-.button:active {
-  color: #363636;
-  background-color: $lightblue;
-  border: 1px solid $lightblue;
-  -webkit-box-shadow: 0px 0px 10px 0px $lightblue;
-  -moz-box-shadow: 0px 0px 10px 0px$lightblue;
-  box-shadow: 0px 0px 10px 0px $lightblue;
-}
-.buttons {
-  align-items: center;
+
+.btn__content {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: $bg-color;
+  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
 }
 
+.btn--secondary {
+  background-color: $white-color;
+}
 
-  .buttons .button:not(:last-child) {
-    margin-right: .5rem;
+.btn--secondary .btn__content {
+  background-color: $red-color;
+  color: $white-color;
+}
+
+.btn__label {
+  font-size: .40rem;
+  position: absolute;
+  bottom: -1px;
+  right: 8%;
+  padding: 0 5px;
+  background-color: $bg-color;
+  z-index: 3;
+  border-left: 1px solid lightblue;
+}
+
+.btn--secondary .btn__label {
+  background-color: $white-color;
+  color: $black-color;
+}
+
+.btn__glitch {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color;
+  filter: drop-shadow(-2px 3px #67e3f3) drop-shadow(-1px -3px #02d8f3) drop-shadow(2px 1px #02d8f3);
+}
+
+.btn--secondary .btn__glitch {
+  background-color: $red-color;
+}
+
+.btn:hover .btn__glitch,
+.btn:hover .btn__content::after,
+.btn:focus .btn__glitch,
+.btn:focus .btn__content::after {
+  display: block;
+  animation: glitch-animation 2s linear 0s infinite;
+}
+
+.btn:focus {
+  background-color: $pink;
+  color: $pink;
+}
+
+/* secret trick */
+@keyframes glitch-animation {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
   }
 
-  .buttons.group .button:not(:first-child) {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
+  2% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(-5px);
   }
 
-  .buttons.group .button:not(:last-child) {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    margin-right: -1px;
+  6% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(5px);
   }
 
-  .buttons.group .button:last-child {
-    margin-right: 0;
+  8% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(-5px);
   }
 
-  .buttons.group .button:hover {
-    z-index: 2;
+  9% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(0);
   }
 
-  .buttons.group .button:focus, 
-  .buttons.group .button:active {
-    z-index: 3;
+  10% {
+    clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+    transform: translate3d(5px, 0, 0);
   }
 
-  .buttons.group .button:focus:hover, 
-  .buttons.group .button:active:hover {
-    z-index: 4;
+  13% {
+    clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+    transform: translateZ(0);
   }
+
+  13.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  15% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  20% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  20.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  25% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  30% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  30.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+
+  35% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(-5px);
+  }
+
+  40% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(5px);
+  }
+
+  45% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(-5px);
+  }
+
+  50% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(0);
+  }
+
+  55% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  60% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+
+  60.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 1;
+  }
+
+  to {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 1;
+  }
+}

@@ -10,6 +10,7 @@ const initialState = {
   direction: '90deg',
   nbColors: 0,
   nbChanges: 0,
+  code: '',
 };
 
 // reducer : "entonnoir" qui retourne un nouvel état à partir de l'état actuel
@@ -31,7 +32,11 @@ function reducer(state = initialState, action = {}) {
       // direction: '90deg',
       // nbColors: 0,
       // direction: action.direction, ici on ajoute une direction (la dernière est prise en compte)
-      return { ...state, direction: action.direction, nbChanges: state.nbChanges + 1 };
+      return {
+        ...state,
+        direction: action.direction,
+        nbChanges: state.nbChanges + 1,
+      };
 
     case RANDOM_FIRST_COLOR:
       return {

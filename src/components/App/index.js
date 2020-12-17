@@ -2,11 +2,12 @@
 import React from 'react';
 
 // == Import
-import NbColors from 'src/components/NbColors';
-import Controls from 'src/components/Controls';
-import Gradient from 'src/components/Gradient';
+// On remplace par le composant container, qui est la version enrichie
+import NbColors from 'src/containers/NbColors';
+import Controls from 'src/containers/Controls';
+import Gradient from 'src/containers/Gradient';
 import Directions from 'src/components/Directions';
-import Code from 'src/components/Code';
+import Code from 'src/containers/Code';
 
 import 'src/styles/index.scss';
 
@@ -14,7 +15,7 @@ import 'src/styles/index.scss';
 const App = () => (
   <div className="app">
     <h1>Simple gradient generator</h1>
-    <NbColors nbColors={4} />
+    <NbColors />
     <Controls />
     <Gradient />
     <Directions />
