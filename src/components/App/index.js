@@ -7,7 +7,7 @@ import NbColors from 'src/containers/NbColors';
 import Controls from 'src/containers/Controls';
 import Gradient from 'src/containers/Gradient';
 import Directions from 'src/components/Directions';
-import Code from 'src/containers/Code';
+import Code from 'src/components/Code';
 
 import 'src/styles/index.scss';
 
