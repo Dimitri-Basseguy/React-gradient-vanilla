@@ -1,5 +1,7 @@
 {
-  "name": "react-modele",
+  "name": "react-gradient",
+  "homepage": "https://www.dimitri-basseguy.fr/gradient/",
+  "version": "1.0.0",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
